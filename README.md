@@ -1,4 +1,4 @@
-## CS350 Final Project -- Online Grocery Store
+## Online Grocery Store Project
 ## How to run this project on Mac
 1. Clone the project using the terminal to the desired location. Open the terminal and change the directory to where you want to clone the project to. After you've arrived at correct location type the following command, which will create a new folder cs350-final and download the files to it. **!!WARNING!!** Do not clone to Documents folder, it will break the XAMPP. 
 2. Open XAMPP. Inside the Apache Web Server config file, scroll down and change the DocumentRoot & Directory entries to the path of the folder where you cloned the project to. 
