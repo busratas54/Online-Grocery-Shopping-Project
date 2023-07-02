@@ -1,0 +1,81 @@
+CREATE DATABASE csc350_final;
+
+USE csc350_final;
+
+CREATE TABLE users (
+user_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+username VARCHAR(30) NOT NULL,
+pass CHAR(40) NOT NULL,
+first_name VARCHAR(20) NOT NULL,
+last_name VARCHAR(40) NOT NULL,
+email VARCHAR(60) NOT NULL,
+PRIMARY KEY (user_id),
+UNIQUE (username),
+UNIQUE (email),
+INDEX login (pass, email)
+) ENGINE = INNODB;
+
+CREATE TABLE products (
+product_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+product_title VARCHAR(30) NOT NULL,
+product_category VARCHAR(30) NOT NULL,
+product_img VARCHAR(200) NOT NULL,
+product_description VARCHAR(22) NOT NULL,
+product_price decimal(6,2) NOT NULL,
+PRIMARY KEY (product_id)
+) ENGINE = INNODB;
+
+INSERT INTO products (product_title, product_category, product_img, product_description, product_price) VALUES
+('Persian Cucumbers', 'Produce', 'https://www.bestfreshinc.com/wp-content/uploads/2017/09/Persian-Cucumbers-1.jpg', 'Fresh and crisp', 2.99),
+('Vine Tomatoes', 'Produce', 'https://thegrocerybag.co.uk/wp-content/uploads/2020/08/VINE-TOMATO.jpg', 'Juicy and ripe', 3.49),
+('Celery', 'Produce', 'http://gastronomt.ru/upload/iblock/15c/46302.jpg', 'Crunchy and flavorful', 1.99),
+('Organic Avocados', 'Produce', 'https://cdn.shopify.com/s/files/1/0367/4642/8547/products/awokado-hass.jpg?v=1603762033', 'Creamy and delicious', 4.99),
+('Pears', 'Produce', 'https://askthefoodgeek.com/wp-content/uploads/2017/02/pears-in-season.jpg', 'Sweet pears', 2.49),
+('Eggs', 'Produce', 'https://live.staticflickr.com/4854/46699166472_4613e6a95d_b.jpg', 'Farm-fresh eggs', 1.99),
+('Yellow Corn', 'Produce', 'https://cdn.shopify.com/s/files/1/0271/6634/3237/products/goldcorn_720x.jpg?v=1614395321', 'Super crunchy', 0.99),
+('Lemons', 'Produce', 'https://images.heb.com/is/image/HEBGrocery/000375185', 'Tart and zesty', 1.49),
+('Blueberry Muffin', 'Bakery', 'https://www.scooterscoffee.com/media/catalog/product/cache/9d8e01fde6b4abf2b84ef6b387a4952d/b/l/blueberry-muffin.png', 'Freshly baked', 2.99),
+('Chocolate Croissant', 'Bakery', 'https://cdn.shopify.com/s/files/1/0495/4839/4645/products/Copyofoobforshopifyssc_5000x.png?v=1643288749', 'Buttery croissant', 1.99),
+('Cinnamon Roll', 'Bakery', 'https://s7d1.scene7.com/is/image/mcdonalds/DC_202109_1557_CinnamonRoll_832x472:1-3-product-tile-desktop?wid=765&hei=472&dpr=off', 'With cream frosting', 3.49),
+('Baguette', 'Bakery', 'https://panamarbakery.com/public/Image/2021/3/13954_1baguetteclsica250g37uds250g_Galeria.png', 'Delicious baguette', 2.49),
+('Apples','Produce','https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_800/https://thegrocerybag.co.uk/wp-content/uploads/2020/08/ROYAL-GALA-APPLES-4PK.jpg','Crisp and juicy',1.75),
+('Bananas','Produce','https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1024/https://thegrocerybag.co.uk/wp-content/uploads/2020/08/banana-1.jpg','Organic and sweet', 1.50),
+('Green Cabbage', 'Produce', 'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_800/https://thegrocerybag.co.uk/wp-content/uploads/2020/08/Green-Cabbage.jpg', 'Fresh and crunchy', 1.99),
+('Mango', 'Produce', 'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_800/https://thegrocerybag.co.uk/wp-content/uploads/2020/08/KESAR-MANGO-BIG-BOX-12S.jpg', 'Exquisite and juicy', 2.49),
+('Eggplant', 'Produce', 'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_800/https://thegrocerybag.co.uk/wp-content/uploads/2020/08/AUBERGINE.jpg', 'Flavorful',2.99),
+('Green grapes', 'Produce', 'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1024/https://thegrocerybag.co.uk/wp-content/uploads/2020/08/green-grapes-1.jpg', 'Sweet and juicy',1.99),
+('Red grapes', 'Produce', 'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_800/https://thegrocerybag.co.uk/wp-content/uploads/2020/08/RED-GRAPES-PUNNET.jpg', 'Sweet and juicy', 1.99),
+('Red Onion','Produce','https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_800/https://thegrocerybag.co.uk/wp-content/uploads/2020/08/RED-ONION-3S-1.jpg','Fresh and flavorful',1.49), 
+('Spinach','Produce', 'https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_800/https://thegrocerybag.co.uk/wp-content/uploads/2020/08/SPINACH-BUNCH-1.jpg','Nutrient-packed',1.99),
+('White Potatoes(Each)','Produce','https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_800/https://thegrocerybag.co.uk/wp-content/uploads/2020/08/White-Potatoes.jpg','Freshly grown',0.59),
+('Chocolate Chip Cookie', 'Bakery','https://www.scooterscoffee.com/media/catalog/product/cache/c2946e4773a83dd72a8f7b0af732da18/c/c/cccookie__600x600.png','Homemade',0.99),
+('Cheesecake','Bakery','https://cdn.shopify.com/s/files/1/2530/7762/products/7041-ny-cheesecake-0010_900x900.jpg?v=1571713009','Delicious',8.99),
+('Chocolate Lava Cake','Bakery','https://cdn.shopify.com/s/files/1/2530/7762/products/7038-chocolate-lava-cake-0022_900x900.jpg?v=1646711979','Velvety chocolate',4.99),
+('Croissant with Hazelnuts','Bakery', 'https://panamarbakery.com/public/Image/2023/2/130341croisant_choco_margarina_Normal.png','Chocolate cream inside',1.99),
+('Sliced bread','Bakery','https://panamarbakery.com/public/Image/2021/3/161547603912167normal_Normal.png','Whole Wheat',1.49),
+('Red Velvet Muffin','Bakery','https://panamarbakery.com/public/Image/2023/2/130274-muffin_red_velvet_3611_Normal.png', 'Freshly baked',3.50),
+('Mini Croissant','Bakery', 'https://panamarbakery.com/public/Image/2022/3/130436-minicroissantsingluten_7374_Grande.png','Comes in packaging',0.99),
+('Orange Juice','Beverages','https://www.floridacitrus.org/oj/wp-content/uploads/sites/2/2022/08/Minute-maid-1.png','100% Natural',5.49),
+('Green Tea','Beverages','https://www.freshdirect.com/media/images/product/dairy_19/dai_pid_2002469_j.jpg?lastModify=2023-02-21','Plastic bottle',2.99),
+('Smart Water','Beverages','https://www.freshdirect.com/media/images/product/specialty_11/spe_glaceau_wtrsmrt_cs_j.jpg?lastModify=2023-03-21','Plastic Bottles',11.99),
+('Cran Mango Juice','Beverages','https://www.freshdirect.com/media/images/product/grocery_56/gro_pid_4018869_z.jpg?lastModify=2022-11-15&publishId=3202','Juice,Plastic bottle',4.39),
+('Petite Beef Filet','Meats','https://www.freshdirect.com/media/images/product/meat_3/mea_ptflt_bf_z.jpg?lastModify=2021-03-24&publishId=3202','',15.99),
+('Thin Sliced Pork Chops','Meats','https://www.freshdirect.com/media/images/product/meat_3/mea_pid_3335266_z.jpg?lastModify=2022-05-13&publishId=3202','',4.99),
+('Lamb Rib Chops','Meats','https://www.freshdirect.com/media/images/product/meat_2/mea_pid_3330082_z.jpg?lastModify=2016-09-09&publishId=3202','',10.99);
+
+CREATE TABLE orders (
+order_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,
+user_id MEDIUMINT UNSIGNED NOT NULL,
+order_date DATE,
+ShipName VARCHAR(40) NOT NULL,
+ShipAddress VARCHAR(30) NOT NULL,
+ShipCity VARCHAR(200) NOT NULL,
+ShipState VARCHAR(22) NOT NULL,
+ShipZip VARCHAR(22) NOT NULL,
+ShipCountry VARCHAR(22) NOT NULL,
+product_price decimal(6,2) NOT NULL,
+PRIMARY KEY (order_id),
+INDEX (order_date),
+INDEX (ShipZip),
+FOREIGN KEY (user_id) REFERENCES users (user_id)
+) ENGINE = INNODB;
